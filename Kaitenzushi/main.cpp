@@ -20,7 +20,6 @@ int main() {
 int getMaximumEatenDishCount(int N, vector<int> D, int K) {
   // Write your code here
   deque<int> dq;
-  deque<int>::iterator it;
   int dishes_eaten = 0;
   set<int> lookupSet;
   
@@ -28,14 +27,14 @@ int getMaximumEatenDishCount(int N, vector<int> D, int K) {
     int item = D[i];
     
     
-    if (lookupSet.count(item) == 0) { //if not in queue
-      if (dq.size() == K)  {
+    if (lookupSet.count(item) == 0) { //if not eaten
+      if (dq.size() == K)  { //if queue is full
         lookupSet.erase(dq.back());
         dq.pop_back();
       }
       
       
-      dq.push_front(item);
+      dq.push_front(item); //update both lookupSet and dq
       lookupSet.insert(item);
       dishes_eaten++;
     }
