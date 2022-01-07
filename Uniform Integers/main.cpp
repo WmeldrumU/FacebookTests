@@ -15,10 +15,12 @@ int main()
   return 0;
 }
 /**
- * 
- * @param  {long} long : 
- * @param  {long} long : 
- * @return {int}       : 
+ * Returns number of uniform integers between A and B (inclusive).
+ * All uniform integers are multiples of the lowest uniform integer
+ * with the same number of digits (i.e. 888 / 111 == 8)
+ * @param  {long long} A : 
+ * @param  {long long} B : 
+ * @return {int} count : number of uniform integers
  */
 int getUniformIntegerCountInInterval(long long A, long long B) {
   // Write your code here
